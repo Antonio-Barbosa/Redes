@@ -52,7 +52,7 @@ function ListarProduto() {
     useEffect(() => { getProduto() }, [])
     return (
         <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-            <Header title={'Listar Produtos'} />
+            <Header title={'Lista de  Produtos'} />
 
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -80,7 +80,7 @@ function ListarProduto() {
                                     <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-gray">
 
                                         <button
-                                            className="bg-red-600 text-white font-bold py-2 px-4 rounded inline-flex items-center right-20"
+                                            className="bg-red-600 hover:bg-red-400 text-white font-bold py-2 px-4 rounded inline-flex items-center right-20"
                                             onClick={() => removerProduto(dat.id)}
                                         >
                                             Remover

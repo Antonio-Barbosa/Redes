@@ -1,0 +1,6 @@
+FROM node:alpine
+WORKDIR /entrega
+EXPOSE 3000
+COPY . /entrega
+RUN npm install
+CMD [ "npm","start" ]

@@ -1,0 +1,53 @@
+
+
+
+version: '3.8'
+services:
+  server:
+    image: imagem-server
+    container_name: container-servidor
+    command: npm install
+    ports:
+      - "3001:3001"
+    entrypoint: npm run dev
+  client:
+    image: imagem-client
+    container_name: container-front
+    command: npm install
+    ports:
+      - "3000:3000"
+    entrypoint: npm run start
+
+# version: '3.1'
+
+# services:
+
+#   db:
+#     image: mysql
+#     # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
+#     # (this is just an example, not intended to be a production configuration)
+#     ports: 
+#       - '3306:3306' 
+#     restart: always
+#     environment:
+#       MYSQL_ROOT_PASSWORD: fatec
+#       MYSQL_DATABASE: redes
+#     networks:
+#       - host
+
+
+#   server:
+#     container_name: NODE_APP
+#     build: '.'
+#     depends_on:
+#       - db
+#     links:
+#       - db
+#     ports:
+#       - '3000:3000'
+#     networks:
+#       - host
+      
+# networks:
+#   host:
+#     driver: bridge
